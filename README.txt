@@ -1,4 +1,4 @@
-Sorcery
+Sorcery version 1.0
 https://github.com/richardcavell/sorcery
 Any component of this project that is my intellectual property, I release
 under the MIT license.
