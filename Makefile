@@ -18,13 +18,19 @@ DSKIMAGE = SORCERY.DSK
 
 .DEFAULT: all
 .PHONY:   all
+all: disk
 
-all: $(DSKIMAGE)
+.PHONY: disk
+disk: $(DSKIMAGE)
+
+.PHONY: help
+help: info
 
 .PHONY: info
 info:
 	@echo "Possible targets:"
-	@echo "make" $(DSKIMAGE)
+	@echo "make disk"
+	@echo "make info"
 	@echo "make mame         # Test the disk with mame coco3"
 	@echo "make mame-debug   # Test the disk with mame coco3 -debug"
 
