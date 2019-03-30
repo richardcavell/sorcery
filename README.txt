@@ -1,7 +1,7 @@
 Sorcery version 1.0
 https://github.com/richardcavell/sorcery
-Any component of this project that is my intellectual property, I release
-under the MIT license.
+Some of this is not my intellectual property.  Any component of this project
+that is my intellectual property, I release under the MIT license.
 
 This project is intended for the TRS-80 Color Computer 3.  It is a very
 simple program that does something strange to the cursor.
