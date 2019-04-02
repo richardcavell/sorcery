@@ -3,7 +3,7 @@
 # https://github.com/richardcavell/sorcery
 
 # This is a simple makefile that allows you to create a disk image from this
-# program, and to test that disk image using MAME.
+# BASIC program, and to test that disk image using MAME.
 
 # You should have installed decb from the toolshed - see here:
 # https://github.com/boisy/toolshed
