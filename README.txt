@@ -1,4 +1,4 @@
-Sorcery version 1.0
+Sorcery version 1.1
 https://github.com/richardcavell/sorcery
 
 Paul Barton posted some BASIC code to Facebook on 16 March 2019.  This
@@ -19,4 +19,4 @@ This project is complete. I will review it from time to time. The last review
 occurred in April 2019.
 
 Richard Cavell
-March 2019
+March 2019 - April 2019
