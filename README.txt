@@ -15,5 +15,8 @@ simple program that does something strange to the cursor.
 When the emulated machine starts to run, don't do anything! MAME will
 automatically type out the correct command and run it.
 
+This project is complete. I will review it from time to time. The last review
+occurred in April 2019.
+
 Richard Cavell
 March 2019
