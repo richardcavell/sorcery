@@ -1,5 +1,5 @@
 # Makefile
-# Sorcery version 1.0
+# Sorcery version 1.1
 # https://github.com/richardcavell/sorcery
 
 # This is a simple makefile that allows you to create a disk image from this
