@@ -46,12 +46,12 @@ mame: $(DSKIMAGE)
 	@echo "Launching MAME..."
 	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN \"SORCERY\"\n" -autoboot_delay 2
 
-mame-debug:   $(DSKIMAGE)
+mame-debug: $(DSKIMAGE)
 	@echo "Launching MAME..."
 	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN \"SORCERY\"\n" -autoboot_delay 2 -debug
 
 
-.PHONY:   clean
+.PHONY: clean
 clean:
 	$(RM) $(DSKIMAGE)
 
