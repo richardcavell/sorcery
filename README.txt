@@ -1,4 +1,4 @@
-Sorcery version 1.1
+Sorcery version 1.2
 https://github.com/richardcavell/sorcery
 
 This project is intended for the TRS-80 Color Computer 3.  It is a very
@@ -19,4 +19,4 @@ This project is complete. I will review it from time to time. The last review
 occurred in May 2019.
 
 Richard Cavell
-March 2019 - April 2019
+March 2019 - May 2019
