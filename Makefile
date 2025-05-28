@@ -1,9 +1,9 @@
 # Makefile
-# Sorcery version 1.2
+# Sorcery version 1.3
 # https://github.com/richardcavell/sorcery
 
-# This is a simple makefile that allows you to create a disk image from this
-# BASIC program, and to test that disk image using MAME.
+# This is a simple makefile that allows you to create a disk image from the
+# accompanying BASIC program, and to test that disk image using MAME.
 
 # You should have installed decb from the toolshed - see here:
 # https://github.com/boisy/toolshed
@@ -37,21 +37,19 @@ info:
 $(DSKIMAGE): $(SORCERY)
 	$(RM) $@
 	$(DECBTOOL) dskini $@ -3
-	$(DECBTOOL) copy $(SORCERY) -0 -t $(DSKIMAGE),SORCERY.BAS
+	$(DECBTOOL) copy $(SORCERY) -0 -r -t $(DSKIMAGE),SORCERY.BAS
 
 .PHONY: mame
 .PHONY: mame-debug
 
 mame: $(DSKIMAGE)
 	@echo "Launching MAME..."
-	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN \"SORCERY\"\n" -autoboot_delay 2
+	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN """SORCERY"""\n" -autoboot_delay 2
 
 mame-debug: $(DSKIMAGE)
 	@echo "Launching MAME..."
-	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN \"SORCERY\"\n" -autoboot_delay 2 -debug
-
+	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN """SORCERY"""\n" -autoboot_delay 2 -debug
 
 .PHONY: clean
 clean:
 	$(RM) $(DSKIMAGE)
-
