@@ -3,7 +3,7 @@
 # https://github.com/richardcavell/sorcery
 
 # This is a simple makefile that allows you to create a disk image from the
-# accompanying BASIC program, and to test that disk image using MAME.
+# accompanying BASIC program, and to test that disk image using MAME or XRoar.
 
 # You should have installed decb from the toolshed - see here:
 # https://github.com/boisy/toolshed
@@ -11,8 +11,12 @@
 # You should have also installed MAME - see here:
 # https://mamedev.org
 
+# or XRoar - see here:
+# https://www.6809.org.uk/xroar
+
 DECBTOOL = decb
 MAME     = mame
+XROAR    = xroar
 SORCERY  = SORCERY.BAS
 DSKIMAGE = SORCERY.DSK
 
@@ -28,11 +32,15 @@ help: info
 
 .PHONY: info
 info:
-	@echo "Possible targets:"
+	@echo "This makefile was written by Richard Cavell"
+	@echo "https://github.com/richardcavell/sorcery"
+	@echo
+	@echo "Your options are:"
 	@echo "make disk"
 	@echo "make info"
 	@echo "make mame         # Test the disk with mame coco3"
 	@echo "make mame-debug   # Test the disk with mame coco3 -debug"
+	@echo "make xroar        # Test the disk with XRoar"
 
 $(DSKIMAGE): $(SORCERY)
 	$(RM) $@
@@ -44,11 +52,17 @@ $(DSKIMAGE): $(SORCERY)
 
 mame: $(DSKIMAGE)
 	@echo "Launching MAME..."
-	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN """SORCERY"""\n" -autoboot_delay 2
+	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN \"SORCERY\"\n" -autoboot_delay 2
 
 mame-debug: $(DSKIMAGE)
 	@echo "Launching MAME..."
 	$(MAME) coco3 -flop1 $(DSKIMAGE) -autoboot_command "RUN """SORCERY"""\n" -autoboot_delay 2 -debug
+
+.PHONY: xroar
+
+xroar: $(DSKIMAGE)
+	@echo "Launching XRoar..."
+	$(XROAR) -m coco3 -load-fd0 $(DSKIMAGE) -type "RUN \"SORCERY\"\r"
 
 .PHONY: clean
 clean:
