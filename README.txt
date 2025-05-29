@@ -21,6 +21,10 @@ don't know who first came up with it.
 Any component of this project that is my intellectual property, I release
 under the MIT license.
 
+This trick works on the Coco 3 because the Coco 3 copies the ROM to RAM
+before running it. This means that you can write to the operating system
+machine code. On a Coco 1 or 2, this is not the case.
+
 This project is complete. I will review it from time to time. The last review
 occurred in May 2025.
 
